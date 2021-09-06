@@ -52,7 +52,12 @@ image_resize_biquartic=resize(img, (resize_width, resize_height), order=4, anti_
 skimage.io.imsave("image_resize_biquartic_scikit.png", img_as_uint(image_resize_biquartic))
 
 ##########################  using PIL ########################################
-
+'''
+An optional resampling filter. This can be one of PIL.Image.NEAREST (use nearest neighbour), 
+PIL.Image.BILINEAR (linear interpolation), PIL.Image.BICUBIC (cubic spline interpolation), 
+or PIL.Image.LANCZOS (a high-quality downsampling filter). If omitted, or if the image has mode “1” or “P”, 
+it is set PIL.Image.NEAREST
+'''
 img=Image.open(img_path)
 img_resize = img.resize((resize_width, resize_height), Image.BOX)
 
